@@ -150,8 +150,6 @@ class Ui_SignUpWindow(QtWidgets.QMainWindow):
         self.firstNameLineEdit.setStyleSheet("background-color: #fff8e7; border-radius: 10px")
         self.lastNameLineEdit.setStyleSheet(
             "background-color: #fff8e7; border-radius: 10px")
-        self.dateEdit.setStyleSheet(
-            "alternate-background-color:  # fffff ; max-width: 720px; min-height: 100px")
         self.usernameLineEdit.setStyleSheet(
             "background-color: #fff8e7; border-radius: 10px")
         self.passwordLineEdit.setStyleSheet(

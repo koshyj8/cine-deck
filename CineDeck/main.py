@@ -15,11 +15,12 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import mysql.connector as mc
-
+import webbrowser
 from window_code.ui_signupscreen import Ui_SignUpWindow
 
 from dotenv import load_dotenv
 load_dotenv()
+
 
 class Ui_LogInWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -57,9 +58,13 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.passwordLineEdit.setObjectName(u"passwordLineEdit")
         self.passwordLineEdit.setAutoFillBackground(True)
         self.passwordLineEdit.setEchoMode(QLineEdit.Password)
-        
+
         self.gridLayout.addWidget(self.passwordLineEdit, 1, 1, 1, 1)
-        
+        self.text_browser = QTextBrowser()
+        self.text_browser.setOpenExternalLinks(True)
+        self.text_browser.setReadOnly(True)
+        self.text_browser.append(
+            "<a href='https://github.com/koshyj8/cine-deck'>Source Code</a>")
         self.usernameLineEdit = QLineEdit(self.formWidget)
         self.usernameLineEdit.setObjectName(u"usernameLineEdit")
         self.usernameLineEdit.setCursorMoveStyle(Qt.VisualMoveStyle)
@@ -79,8 +84,10 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
 
         self.pushButton = QPushButton(self.formWidget)
         self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(0, 0, 40, 50))
 
         self.gridLayout.addWidget(self.pushButton, 3, 1, 1, 1)
+        self.pushButton.setGeometry(QRect(0, 0, 40, 20))
 
         self.commandLinkButton = QCommandLinkButton(self.formWidget)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
@@ -89,9 +96,10 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         font.setPointSize(7)
         self.commandLinkButton.setFont(font)
         self.gridLayout.addWidget(self.commandLinkButton, 4, 1, 1, 1)
+
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(1000, 190, 1245,700))
+        self.label_2.setGeometry(QRect(1000, 190, 1245, 700))
         self.label_2.setPixmap(
             QPixmap(r"CineDeck\assets\movie posters\download.jpg"))
         self.label = QLabel(self.centralwidget)
@@ -103,20 +111,22 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.label.setPixmap(
             QPixmap(r"CineDeck\assets\\logo.svg"))
         LogInWindow.setCentralWidget(self.centralwidget)
-        self.usernameLineEdit.setStyleSheet("background-color: #fff8e7; border-radius: 10px")
-        self.passwordLineEdit.setStyleSheet("background-color: #fff8e7; border-radius: 10px")
+        self.usernameLineEdit.setStyleSheet(
+            "background-color: #fff8e7; border-radius: 10px")
+        self.passwordLineEdit.setStyleSheet(
+            "background-color: #fff8e7; border-radius: 10px")
         self.pushButton.setStyleSheet(
             "background-color: #fff8e7; border-style: inset; border-width: 2px; border-color: black")
         self.statusbar = QStatusBar(LogInWindow)
         self.statusbar.setObjectName(u"statusbar")
         LogInWindow.setStatusBar(self.statusbar)
-        
+
         self.poster_label = QLabel(self)
         self.poster_label.setObjectName(u"plabel")
         self.poster_label.setPixmap(
             QPixmap(r"CineDeck\assets\\download.svg"))
         self.poster_label.setGeometry(250, 235, 2400, 278)
-        
+
         self.retranslateUi(LogInWindow)
 
         QMetaObject.connectSlotsByName(LogInWindow)
@@ -124,6 +134,9 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.pushButton.clicked.connect(self.login)
         self.commandLinkButton.clicked.connect(self.signupwindow)
 
+
+    def opengit(self):
+        webbrowser.open('https://github.com/koshyj8/cine-deck/')
 
     # setupUi
 
@@ -145,6 +158,7 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
             "LogInWindow", u"Username: ", None))
         self.label.setText("")
         self.poster_label.setText("")
+
     # retranslateUi
 
     def signupwindow(self):
@@ -181,6 +195,7 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
 
     def mainscreen(self):
         self.selfmainscreen.setupUi(self)
+
 
 if __name__ == "__main__":
     app = PyQt5.QtWidgets.QApplication(sys.argv)
