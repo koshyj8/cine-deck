@@ -16,7 +16,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import mysql.connector as mc
 
-from ui_signupscreen import Ui_SignUpWindow
+from window_code.ui_signupscreen import Ui_SignUpWindow
 
 from dotenv import load_dotenv
 load_dotenv()

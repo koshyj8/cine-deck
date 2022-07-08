@@ -18,12 +18,10 @@ from PyQt5.QtGui import *
 import mysql.connector as mc
 from qtwidgets import PasswordEdit
 
-from ui_loginscreen import Ui_LogInWindow
 
 class Ui_SignUpWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.selfloginwindow = Ui_LogInWindow()
         
     def setupUi(self, SignUpWindow):
         if not SignUpWindow.objectName():
@@ -134,7 +132,7 @@ class Ui_SignUpWindow(QtWidgets.QMainWindow):
         font1.setPointSize(28)
         self.label.setFont(font1)
         self.label.setPixmap(QPixmap(r"assets\\logo.svg"))
-        self.label.setGeometry(QRect(-30, 0, 361, 293))
+        self.label.setGeometry(-30, -150, 600, 108)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.label)
         SignUpWindow.setCentralWidget(self.centralwidget)
