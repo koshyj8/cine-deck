@@ -131,7 +131,7 @@ class Ui_SignUpWindow(QtWidgets.QMainWindow):
         font1 = QFont()
         font1.setPointSize(28)
         self.label.setFont(font1)
-        self.label.setPixmap(QPixmap(r"assets\\logo.svg"))
+        self.label.setPixmap(QPixmap(r"CineDeck\assets\\logo.svg"))
         self.label.setGeometry(-30, -150, 600, 108)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.label)

@@ -28,7 +28,7 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.setupUi(self)
 
     def setupUi(self, LogInWindow):
-        self.cursor_pix = QPixmap("assets\cursor.png")
+        self.cursor_pix = QPixmap("CineDeck\assets\cursor.png")
         self.setStyleSheet("border-radius: 10px;")
         # 2. Scale textures
         self.cursor_scaled_pix = self.cursor_pix.scaled(
@@ -93,7 +93,7 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(1000, 190, 1245,700))
         self.label_2.setPixmap(
-            QPixmap(r"assets\movie posters\download.jpg"))
+            QPixmap(r"CineDeck\assets\movie posters\download.jpg"))
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         font1 = QFont()
@@ -101,7 +101,7 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.label.setGeometry(390, 400, 600, 108)
         self.label.setFont(font1)
         self.label.setPixmap(
-            QPixmap(r"assets\\logo.svg"))
+            QPixmap(r"CineDeck\assets\\logo.svg"))
         LogInWindow.setCentralWidget(self.centralwidget)
         self.usernameLineEdit.setStyleSheet("background-color: #fff8e7; border-radius: 10px")
         self.passwordLineEdit.setStyleSheet("background-color: #fff8e7; border-radius: 10px")
@@ -114,7 +114,7 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.poster_label = QLabel(self)
         self.poster_label.setObjectName(u"plabel")
         self.poster_label.setPixmap(
-            QPixmap(r"assets\\download.svg"))
+            QPixmap(r"CineDeck\assets\\download.svg"))
         self.poster_label.setGeometry(250, 235, 2400, 278)
         
         self.retranslateUi(LogInWindow)

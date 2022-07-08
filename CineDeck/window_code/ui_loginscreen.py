@@ -19,7 +19,7 @@ class Ui_LogInWindow(QtWidgets.QMainWindow):
         self.selfsignupwindow.setupUi()
 
     def setupUi(self, LogInWindow):
-        self.cursor_pix = QPixmap("assets\cursor.png")
+        self.cursor_pix = QPixmap("CineDeck\assets\cursor.png")
 
         # 2. Scale textures
         self.cursor_scaled_pix = self.cursor_pix.scaled(
